@@ -7,10 +7,18 @@ zodiac_days = ((1, 20), (2, 19), (3, 21), (4, 21), (5, 21),
 int_mouth = int(input('请输入月份:'))
 int_day = int(input('请输入日期:'))
 
-for zd_num in range(len(zodiac_days)):
-    if zodiac_days[zd_num] >= (int_mouth, int_day):
-        print(zodiac_name[zd_num])
+# for zd_num in range(len(zodiac_days)):
+#     if zodiac_days[zd_num] >= (int_mouth, int_day):
+#         print(zodiac_name[zd_num])
+#         break
+#     elif int_mouth == 12 and int_day > 23:
+#         print(zodiac_name[0])
+#         break
+
+n = 0
+while zodiac_days[n] < (int_mouth, int_day):
+    if int_mouth == 12 and int_day > 23:
         break
-    elif int_mouth == 12 and int_day > 23:
-        print(zodiac_name[0])
-        break
+    n += 1
+
+print(zodiac_name[n])
